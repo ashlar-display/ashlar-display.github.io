@@ -1,0 +1,11 @@
+[book]
+title = "Ashlar"
+description = "A display connection stack in Rust — HDMI 2.1 first."
+language = "en"
+src = "src"
+
+[output.html]
+site-url = "/"
+git-repository-url = "https://github.com/ashlar-display"
+git-repository-icon = "fab-github"
+edit-url-template = "https://github.com/ashlar-display/ashlar-display.github.io/edit/main/{path}"
