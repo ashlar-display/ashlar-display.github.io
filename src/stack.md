@@ -34,3 +34,34 @@ The parsing and protocol layers are judgment-free: they implement the specificat
 report what they find. The negotiation layer is where opinions live — it ranks candidates
 by a `NegotiationPolicy` you can override, and every accepted or rejected candidate carries
 a reasoning trace explaining why.
+
+## End-to-End Data Flow
+```mermaid
+flowchart TD
+A[Raw EDID bytes] --> B["piaf \nParse EDID / DisplayID"]
+B --> C[piaf::DisplayCapabilities]
+C --> C2["Integration Layer\nConvert to SinkCapabilities"]
+C2 --> D["concordance \nNegotiation Layer"]
+
+    E["SourceCapabilities\ncaller-supplied"] --> D
+    F["CableCapabilities\ncaller-supplied"] --> D
+
+    D --> G[Iterator of NegotiatedConfig]
+    G --> H["Select Configuration\n(policy / caller)"]
+
+    H --> I["culvert \nSCDC register access"]
+    I --> I2["plumbob \nFRL state machine"]
+    I2 --> J{Training Outcome}
+
+    J -->|Success| K[Achieved FRL Rate]
+    J -->|Fallback Required| D
+
+    K --> L["cartouche \nInfoFrame Encoding"]
+    H --> L
+    L --> M[Encoded HDMI Packets]
+    H -.-> LV["cartouche-validate (planned)\nValidate against NegotiatedConfig"]
+    L -.-> LV
+
+    M --> N["DRM/KMS Integration (planned)"]
+    N --> O[Atomic Commit to Hardware]
+```

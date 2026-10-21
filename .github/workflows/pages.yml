@@ -32,6 +32,12 @@ jobs:
         with:
           tool: mdbook@0.5.4
 
+      - name: Install Mermaid preprocessor
+        uses: extractions/setup-crate@v1
+        with:
+          owner: badboy
+          name: mdbook-mermaid
+
       - name: Build
         run: mdbook build
 

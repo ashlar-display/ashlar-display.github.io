@@ -9,3 +9,9 @@ site-url = "/"
 git-repository-url = "https://github.com/ashlar-display"
 git-repository-icon = "fab-github"
 edit-url-template = "https://github.com/ashlar-display/ashlar-display.github.io/edit/main/{path}"
+additional-js = ["mermaid.min.js", "mermaid-init.js"]
+
+[preprocessor]
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
