@@ -38,28 +38,28 @@ a reasoning trace explaining why.
 ## End-to-End Data Flow
 ```mermaid
 flowchart TD
-A[Raw EDID bytes] --> B["piaf \nParse EDID / DisplayID"]
+A[Raw EDID bytes] --> B["piaf <br> Parse EDID / DisplayID"]
 B --> C[piaf::DisplayCapabilities]
-C --> C2["Integration Layer\nConvert to SinkCapabilities"]
-C2 --> D["concordance \nNegotiation Layer"]
+C --> C2["Integration Layer<br>Convert to SinkCapabilities"]
+C2 --> D["concordance <br>Negotiation Layer"]
 
-    E["SourceCapabilities\ncaller-supplied"] --> D
-    F["CableCapabilities\ncaller-supplied"] --> D
+    E["SourceCapabilities<br>caller-supplied"] --> D
+    F["CableCapabilities<br>caller-supplied"] --> D
 
     D --> G[Iterator of NegotiatedConfig]
-    G --> H["Select Configuration\n(policy / caller)"]
+    G --> H["Select Configuration<br>(policy / caller)"]
 
-    H --> I["culvert \nSCDC register access"]
-    I --> I2["plumbob \nFRL state machine"]
+    H --> I["culvert <br>SCDC register access"]
+    I --> I2["plumbob <br>FRL state machine"]
     I2 --> J{Training Outcome}
 
     J -->|Success| K[Achieved FRL Rate]
     J -->|Fallback Required| D
 
-    K --> L["cartouche \nInfoFrame Encoding"]
+    K --> L["cartouche <br>InfoFrame Encoding"]
     H --> L
     L --> M[Encoded HDMI Packets]
-    H -.-> LV["cartouche-validate (planned)\nValidate against NegotiatedConfig"]
+    H -.-> LV["cartouche-validate (planned)<br>Validate against NegotiatedConfig"]
     L -.-> LV
 
     M --> N["DRM/KMS Integration (planned)"]
