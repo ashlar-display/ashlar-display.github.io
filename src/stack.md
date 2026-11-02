@@ -30,7 +30,7 @@ CEC, eARC and further PHY configuration are off the critical path.
 
 ## Where policy lives
 
-The parsing and protocol layers are judgment-free: they implement the specification and
+The parsing and protocol layers are judgment-free: they implement the standard and
 report what they find. The negotiation layer is where opinions live — it ranks candidates
 by a `NegotiationPolicy` you can override, and every accepted or rejected candidate carries
 a reasoning trace explaining why.
