@@ -1,7 +1,7 @@
 # Principles
 
 - **Policy at the right layer.** Parsing layers make no judgements. The negotiation layer is
-  explicitly opinionated but configurable. Hardware layers implement specification, not policy.
+  explicitly opinionated but configurable. Hardware layers implement the standard, not policy.
 - **Modular: pick, combine, replace.** Every layer can be used on its own, combined with
   the others, or replaced by an implementation of the trait the layer above defines
 - **Extensible without forking.** Every library in the stack is designed to be customized
