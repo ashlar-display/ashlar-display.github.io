@@ -4,8 +4,8 @@
 
 Ashlar takes a display link from raw capability bytes to a trained link: parse what the
 sink can do, negotiate the best mode the source, sink and cable can all carry, describe it
-in InfoFrames, and bring up the link over SCDC with FRL training. Each layer is its own
-crate — use one, or use them all.
+in InfoFrames, and bring up the link over SCDC, with FRL training or over TMDS. Each layer
+is its own crate — use one, or use them all.
 
 An ashlar is a stone dressed to fit its neighbours exactly. The crates are built the same
 way: each one is small, does one job completely, and meets the next layer at a typed,

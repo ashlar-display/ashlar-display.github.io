@@ -3,14 +3,15 @@
 Pick the layers you need. Each crate's README has a worked example; this page tells you
 which crates to start from.
 
-| You are building…                                         | Start with                                                                              |
-|-----------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| A tool that reads and explains a display's EDID           | [piaf](https://docs.rs/piaf)                                                            |
-| Mode selection: "what can I drive on this display?"       | [piaf](https://docs.rs/piaf) + [concordance](https://docs.rs/concordance)               |
-| InfoFrame generation or inspection                        | [cartouche](https://docs.rs/cartouche)                                                  |
-| HDMI 2.1 link bring-up on your own hardware               | [hdmi-hal](https://docs.rs/hdmi-hal) + [culvert](https://docs.rs/culvert) + [plumbob](https://docs.rs/plumbob) |
-| The same, on an async executor                            | the `-async` companions of the three above                                              |
-| Experiments against a real sink from Linux userspace      | [hdmi-hal-i2c-dev](https://docs.rs/hdmi-hal-i2c-dev) under culvert and plumbob          |
+| You are building…                                                  | Start with                                                                                                     |
+|--------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+| A tool that reads and explains a display's EDID                    | [piaf](https://docs.rs/piaf)                                                                                   |
+| Mode selection: "what can I drive on this display?"                | [piaf](https://docs.rs/piaf) + [concordance](https://docs.rs/concordance)                                      |
+| InfoFrame generation or inspection                                 | [cartouche](https://docs.rs/cartouche)                                                                         |
+| HDMI 2.1 link bring-up on your own hardware                        | [hdmi-hal](https://docs.rs/hdmi-hal) + [culvert](https://docs.rs/culvert) + [plumbob](https://docs.rs/plumbob) |
+| The same, on an async executor                                     | the `-async` companions of the three above                                                                     |
+| TMDS link setup: clock ratio, scrambling, the sink's `TMDS_Config` | [spiritlevel](https://docs.rs/spiritlevel)                                                                     |
+| Experiments against a real sink from Linux userspace               | [hdmi-hal-i2c-dev](https://docs.rs/hdmi-hal-i2c-dev) under culvert and plumbob                                 |
 
 Add crates individually:
 
