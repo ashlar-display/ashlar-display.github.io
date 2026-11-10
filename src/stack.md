@@ -28,7 +28,7 @@ The critical path — what a minimal working HDMI 2.1 link needs, in order:
 | 9    | Discover the source's capabilities from DRM/KMS                                    | —                | Planned  |
 | 10   | Turn the negotiated configuration into a DRM atomic modeset                        | —                | Planned  |
 
-CEC, eARC and further PHY configuration are off the critical path.
+CEC, eARC and further PHY configuration are off the critical path, but planned (soon™).
 
 ## Where policy lives
 
