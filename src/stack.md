@@ -49,7 +49,7 @@ C2 --> D["concordance <br>Negotiation Layer"]
     E["SourceCapabilities<br>caller-supplied"] --> D
     F["CableCapabilities<br>caller-supplied"] --> D
 
-    D --> G[Iterator of NegotiatedConfig]
+    D --> G["Iterator of<br>NegotiatedConfig"]
     G --> H["Select Configuration<br>(policy / caller)"]
 
     H --> I["culvert <br>SCDC register access"]
@@ -64,9 +64,9 @@ C2 --> D["concordance <br>Negotiation Layer"]
     K --> L["cartouche <br>InfoFrame Encoding"]
     H --> L
     L --> M[Encoded HDMI Packets]
-    H -.-> LV["cartouche-validate (planned)<br>Validate against NegotiatedConfig"]
+    H -.-> LV["InfoFrame builder<br>(planned)<br>Build and validate<br>against NegotiatedConfig"]
     L -.-> LV
 
-    M --> N["DRM/KMS Integration (planned)"]
-    N --> O[Atomic Commit to Hardware]
+    M --> N["DRM/KMS Integration<br>(planned)"]
+    N --> O["Atomic Commit<br>to Hardware"]
 ```

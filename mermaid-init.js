@@ -17,7 +17,18 @@
     }
 
     const theme = lastThemeWasLight ? 'default' : 'dark';
-    mermaid.initialize({ startOnLoad: true, theme });
+    // Mermaid sizes each box from its label as measured when it renders. Use the book's own
+    // font rather than mermaid's default (whichever of Trebuchet MS, Verdana or Arial the
+    // system has), and render once it has loaded, so the boxes fit the text as drawn.
+    // Labels are SVG text rather than HTML in a fixed-size box, which clips any text that
+    // renders wider than measured (browser zoom, a minimum font size).
+    mermaid.initialize({
+        startOnLoad: false,
+        theme,
+        fontFamily: '"Open Sans", sans-serif',
+        flowchart: { htmlLabels: false },
+    });
+    document.fonts.ready.then(() => mermaid.run());
 
     // Simplest way to make mermaid re-render the diagrams in the new theme is via refreshing the page
 
