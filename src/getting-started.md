@@ -12,6 +12,7 @@ which crates to start from.
 | The same, on an async executor                                     | the `-async` companions of the three above                                                                     |
 | TMDS link setup: clock ratio, scrambling, the sink's `TMDS_Config` | [spiritlevel](https://docs.rs/spiritlevel)                                                                     |
 | Experiments against a real sink from Linux userspace               | [hdmi-hal-i2c-dev](https://docs.rs/hdmi-hal-i2c-dev) under culvert and plumbob                                 |
+| Tests of code over hdmi-hal's traits, against a simulated sink     | [maquette](https://docs.rs/maquette), as a dev-dependency                                                      |
 
 Add crates individually:
 

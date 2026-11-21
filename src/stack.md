@@ -8,7 +8,8 @@ Signaling layer        InfoFrames · SCDC                                     ca
 Negotiation layer      enumeration · validation · ranking                    concordance
 Parsing layer          EDID · DisplayID                                      piaf
 Shared types           display vocabulary                                    display-types
-Hardware abstraction   SCDC transport · PHY                                  hdmi-hal · hdmi-hal-async · hdmi-hal-i2c-dev
+Hardware abstraction   DDC bus · SCDC transport · PHY · time                 hdmi-hal · hdmi-hal-async · hdmi-hal-i2c-dev
+Test support           simulated sink · conformance checks                   maquette
 ```
 
 ## From bytes to a trained link
@@ -48,7 +49,7 @@ C2 --> D["concordance <br>Negotiation Layer"]
     E["SourceCapabilities<br>caller-supplied"] --> D
     F["CableCapabilities<br>caller-supplied"] --> D
 
-    D --> G[Iterator of NegotiatedConfig]
+    D --> G["Iterator of<br>NegotiatedConfig"]
     G --> H["Select Configuration<br>(policy / caller)"]
 
     H --> I["culvert <br>SCDC register access"]
@@ -63,9 +64,9 @@ C2 --> D["concordance <br>Negotiation Layer"]
     K --> L["cartouche <br>InfoFrame Encoding"]
     H --> L
     L --> M[Encoded HDMI Packets]
-    H -.-> LV["cartouche-validate (planned)<br>Validate against NegotiatedConfig"]
+    H -.-> LV["InfoFrame builder<br>(planned)<br>Build and validate<br>against NegotiatedConfig"]
     L -.-> LV
 
-    M --> N["DRM/KMS Integration (planned)"]
-    N --> O[Atomic Commit to Hardware]
+    M --> N["DRM/KMS Integration<br>(planned)"]
+    N --> O["Atomic Commit<br>to Hardware"]
 ```

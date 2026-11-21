@@ -10,7 +10,8 @@
   logs. Rejected candidates are explained; nothing fails silently.
 - **`no_std` where it matters**, async companions where they help.
 - **Hardware behind traits.** SCDC transport and PHY control are injected, so all protocol
-  logic is testable without hardware.
+  logic is testable without hardware; maquette simulates a sink behind those traits, under
+  deterministic time.
 - **No unsafe code.** `#![forbid(unsafe_code)]` across the stack.
 - **Stable output types.** Consumer-facing structs are `#[non_exhaustive]`, so new fields do
   not break you.
