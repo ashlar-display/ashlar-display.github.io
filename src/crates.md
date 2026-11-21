@@ -11,10 +11,11 @@
 | [plumbob](https://github.com/ashlar-display/plumbob)                   | Driver-adjacent      | FRL link training state machine                                                       | [docs.rs](https://docs.rs/plumbob)          |
 | [plumbob-async](https://github.com/ashlar-display/plumbob-async)       | Driver-adjacent      | Async companion to plumbob                                                            | [docs.rs](https://docs.rs/plumbob-async)    |
 | [spiritlevel](https://github.com/ashlar-display/spiritlevel)           | Driver-adjacent      | TMDS link parameters: clock ratio, scrambling and the sink's `TMDS_Config`            | [docs.rs](https://docs.rs/spiritlevel)      |
-| [hdmi-hal](https://github.com/ashlar-display/hdmi-hal)                 | Hardware abstraction | `ScdcTransport` and `HdmiPhy` traits                                                  | [docs.rs](https://docs.rs/hdmi-hal)         |
+| [hdmi-hal](https://github.com/ashlar-display/hdmi-hal)                 | Hardware abstraction | Traits for the DDC bus, SCDC transport, TMDS and FRL PHYs, PHY power, clock and delay | [docs.rs](https://docs.rs/hdmi-hal)         |
 | [hdmi-hal-async](https://github.com/ashlar-display/hdmi-hal-async)     | Hardware abstraction | Async companion to hdmi-hal                                                           | [docs.rs](https://docs.rs/hdmi-hal-async)   |
 | [hdmi-hal-i2c-dev](https://github.com/ashlar-display/hdmi-hal-i2c-dev) | Hardware abstraction | Linux userspace backend over `/dev/i2c-N`, for development and validation             | [docs.rs](https://docs.rs/hdmi-hal-i2c-dev) |
 | [ashlar](https://github.com/ashlar-display/ashlar)                     | —                    | Facade: one feature per crate above, re-exported under its own name                   | [docs.rs](https://docs.rs/ashlar)           |
+| [maquette](https://github.com/ashlar-display/maquette)                 | Test support         | Simulated HDMI sink for tests, and conformance checks for hdmi-hal implementations    | [docs.rs](https://docs.rs/maquette)         |
 
 Current versions are on [crates.io](https://crates.io/keywords/ashlar); each crate's
 `CHANGELOG.md` records what changed in each release.

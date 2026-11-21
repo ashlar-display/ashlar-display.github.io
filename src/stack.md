@@ -8,7 +8,8 @@ Signaling layer        InfoFrames · SCDC                                     ca
 Negotiation layer      enumeration · validation · ranking                    concordance
 Parsing layer          EDID · DisplayID                                      piaf
 Shared types           display vocabulary                                    display-types
-Hardware abstraction   SCDC transport · PHY                                  hdmi-hal · hdmi-hal-async · hdmi-hal-i2c-dev
+Hardware abstraction   DDC bus · SCDC transport · PHY · time                 hdmi-hal · hdmi-hal-async · hdmi-hal-i2c-dev
+Test support           simulated sink · conformance checks                   maquette
 ```
 
 ## From bytes to a trained link
