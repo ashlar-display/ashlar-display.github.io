@@ -2,7 +2,7 @@
 
 ```text
 Integration layer      compositor glue · DRM/KMS · source capability query   (planned)
-Driver-adjacent layer  FRL link training · TMDS link parameters              plumbob · plumbob-async · spiritlevel
+Driver-adjacent layer  FRL link training · TMDS bring-up                     plumbob · plumbob-async · spiritlevel
 Protocol layer         CEC · eARC                                            (planned)
 Signaling layer        InfoFrames · SCDC                                     cartouche · culvert · culvert-async
 Negotiation layer      enumeration · validation · ranking                    concordance
@@ -23,7 +23,7 @@ The critical path — what a minimal working HDMI 2.1 link needs, in order:
 | 3    | Read and write the sink's SCDC registers                                           | culvert          | Released |
 | 4    | Train the FRL link, stepping down rates when the sink asks, falling back to TMDS   | plumbob          | Released |
 | 5    | Choose the TMDS link: clock ratio, scrambling and the sink's `TMDS_Config`         | spiritlevel      | Released |
-| 6    | Bring the TMDS link up over the PHY and SCDC, and check the sink follows           | spiritlevel      | Planned  |
+| 6    | Bring the TMDS link up over the PHY and SCDC, and check the sink follows           | spiritlevel      | Released |
 | 7    | Run the above against real hardware from Linux userspace                           | hdmi-hal-i2c-dev | Released |
 | 8    | Describe the chosen configuration in InfoFrames                                    | cartouche        | Released |
 | 9    | Discover the source's capabilities from DRM/KMS                                    | —                | Planned  |
@@ -53,7 +53,7 @@ C2 --> D["concordance <br>Negotiation Layer"]
     G --> H["Select Configuration<br>(policy / caller)"]
 
     H --> I["culvert <br>SCDC register access"]
-    H -->|TMDS configuration| T["spiritlevel <br>TMDS link parameters"]
+    H -->|TMDS configuration| T["spiritlevel <br>TMDS bring-up"]
     T -->|"sink's TMDS_Config"| I
     I --> I2["plumbob <br>FRL state machine"]
     I2 --> J{Training Outcome}
