@@ -3,16 +3,16 @@
 Pick the layers you need. Each crate's README has a worked example; this page tells you
 which crates to start from.
 
-| You are building…                                                     | Start with                                                                                                     |
-|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
-| A tool that reads and explains a display's EDID                       | [piaf](https://docs.rs/piaf)                                                                                   |
-| Mode selection: "what can I drive on this display?"                   | [piaf](https://docs.rs/piaf) + [concordance](https://docs.rs/concordance)                                      |
-| InfoFrame generation or inspection                                    | [cartouche](https://docs.rs/cartouche)                                                                         |
-| HDMI 2.1 link bring-up on your own hardware                           | [hdmi-hal](https://docs.rs/hdmi-hal) + [culvert](https://docs.rs/culvert) + [plumbob](https://docs.rs/plumbob) |
-| The same, on an async executor                                        | the `-async` companions of the three above                                                                     |
-| TMDS link bring-up: clock ratio, scrambling, the sink's `TMDS_Config` | [spiritlevel](https://docs.rs/spiritlevel), with culvert for SCDC                                              |
-| Experiments against a real sink from Linux userspace                  | [hdmi-hal-i2c-dev](https://docs.rs/hdmi-hal-i2c-dev) under culvert and plumbob                                 |
-| Tests of code over hdmi-hal's traits, against a simulated sink        | [maquette](https://docs.rs/maquette), as a dev-dependency                                                      |
+| You are building…                                                     | Start with                                                                                                                                                         |
+|-----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| A tool that reads and explains a display's EDID                       | [piaf](https://docs.rs/piaf)                                                                                                                                       |
+| Mode selection: "what can I drive on this display?"                   | [piaf](https://docs.rs/piaf) + [concordance](https://docs.rs/concordance)                                                                                          |
+| InfoFrame generation or inspection                                    | [cartouche](https://docs.rs/cartouche)                                                                                                                             |
+| HDMI 2.1 link bring-up on your own hardware                           | [hdmi-hal](https://docs.rs/hdmi-hal) + [culvert](https://docs.rs/culvert) + [plumbob](https://docs.rs/plumbob)                                                     |
+| The same, on an async executor                                        | the `-async` companions of the three above                                                                                                                         |
+| TMDS link bring-up: clock ratio, scrambling, the sink's `TMDS_Config` | [spiritlevel](https://docs.rs/spiritlevel), with culvert for SCDC; on an async executor, [spiritlevel-async](https://docs.rs/spiritlevel-async) with culvert-async |
+| Experiments against a real sink from Linux userspace                  | [hdmi-hal-i2c-dev](https://docs.rs/hdmi-hal-i2c-dev) under culvert and plumbob                                                                                     |
+| Tests of code over hdmi-hal's traits, against a simulated sink        | [maquette](https://docs.rs/maquette), as a dev-dependency                                                                                                          |
 
 Add crates individually:
 

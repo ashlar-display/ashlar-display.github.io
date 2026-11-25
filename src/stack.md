@@ -2,7 +2,7 @@
 
 ```text
 Integration layer      compositor glue · DRM/KMS · source capability query   (planned)
-Driver-adjacent layer  FRL link training · TMDS bring-up                     plumbob · plumbob-async · spiritlevel
+Driver-adjacent layer  FRL link training · TMDS bring-up                     plumbob · plumbob-async · spiritlevel · spiritlevel-async
 Protocol layer         CEC · eARC                                            (planned)
 Signaling layer        InfoFrames · SCDC                                     cartouche · culvert · culvert-async
 Negotiation layer      enumeration · validation · ranking                    concordance
